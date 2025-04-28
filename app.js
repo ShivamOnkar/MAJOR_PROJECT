@@ -98,6 +98,9 @@ app.use((req,res,next) => {
 
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
+app.get("/", (req, res) => {
+    res.render("index.ejs");
+});
 app.use("/",userRouter);
 
 // app.get("/testListing", async(req,res) => {
@@ -114,10 +117,6 @@ app.use("/",userRouter);
 //     res.send("successful testing");
 // });
 
-
-app.get("/", (req, res) => {
-    res.render("index.ejs");
-});
 
 
 app.all("*",(req,res,next) => {
