@@ -98,9 +98,6 @@ app.use((req,res,next) => {
 
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
-app.get("/", (req, res) => {
-    res.render("listings/index.ejs");
-});
 app.use("/",userRouter);
 
 // app.get("/testListing", async(req,res) => {
@@ -129,10 +126,6 @@ app.use((err,req,res,next) => {
     // res.status(statusCode).send(message);
 });
 
-
-
-
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(8080, () => {
+    console.log("server is listening to port 8080");
 });
